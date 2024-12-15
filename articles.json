@@ -1,0 +1,77 @@
+{
+    "articles": [
+      {
+        "title": "Domina Git: De Principiante a Experto",
+        "description": "Una guía completa para dominar Git, desde los conceptos básicos hasta técnicas avanzadas de control de versiones.",
+        "content": "Git es la columna vertebral del desarrollo de software moderno. Esta guía te llevará desde los fundamentos hasta técnicas avanzadas de control de versiones. \n\nComenzaremos con la **configuración inicial**, un paso crucial para identificar tus contribuciones. Luego, aprenderás a ***inicializar tu primer repositorio*** y entender el flujo básico de trabajo con Git.\n\n```# Primero, configura tu identidad global\ngit config --global user.name \"Tu Nombre\"\ngit config --global user.email \"tu@email.com\"```\n\n### Conceptos Fundamentales\n\nUn aspecto crucial es entender el ciclo de vida de los archivos en Git:\n\n1. **Working Directory**: Donde trabajas en tus archivos\n2. **Staging Area** (también llamada *Index*): Área de preparación para los cambios\n3. **Repository**: Donde se almacenan los commits\n\n### Flujo de Trabajo Profesional\n\nEn equipos profesionales, es común utilizar el flujo de trabajo *GitFlow*, que consiste en:\n\n- **main/master**: Rama principal de producción\n- **develop**: Rama de desarrollo\n- **feature/**: Ramas para nuevas características\n- **hotfix/**: Ramas para correcciones urgentes\n\n### Técnicas Avanzadas\n\n**Rebase Interactivo**: Una técnica avanzada para limpiar el historial de commits antes de fusionar:\n```git rebase -i HEAD~3 # Rebase interactivo de los últimos 3 commits```\n\n**Cherry-picking** (término técnico para seleccionar commits específicos):\n```git cherry-pick <hash-del-commit> # Aplica un commit específico a la rama actual```\n\n**Bisect** (búsqueda binaria de errores):\n```git bisect start # Inicia la búsqueda del commit que introdujo un error```\n\n### Resolución de Problemas Comunes\n\n1. **Detached HEAD** (estado donde HEAD no apunta a ninguna rama):\n```git checkout -b nueva-rama # Crea una nueva rama en el estado actual```\n\n2. **Conflictos de Merge**:\n```git mergetool # Abre la herramienta de resolución de conflictos```\n\n### Optimización y Mantenimiento\n\nPara mantener tu repositorio eficiente:\n```git gc # Garbage collection - limpia y optimiza el repositorio\ngit prune # Elimina objetos sin referencias```",
+        "date": "2024-01-01",
+        "image": "https://blog.desafiolatam.com/wp-content/uploads/2016/05/git-github-logo.jpg",
+        "author": "IA",
+        "tags": ["Git", "Control de Versiones", "Desarrollo", "DevOps", "Avanzado"],
+        "boxs": [
+          {
+            "title": "Configuración Inicial",
+            "content": [
+              "```git config --global user.name \"Tu Nombre\" && git config --global user.email \"tu@email.com\" && git config --global init.defaultBranch main && git config --list # Ver configuración actual```"
+            ]
+          },
+          {
+            "title": "Comandos Básicos",
+            "content": [
+              "```git init # Inicializa un nuevo repositorio```",
+              "```git status # Muestra el estado de los archivos```",
+              "```git add <archivo> # Añade archivo al staging```",
+              "```git add . # Añade todos los archivos modificados```",
+              "```git commit -m \"mensaje descriptivo\" # Crea un commit```",
+              "```git log # Ver historial de commits```"
+            ]
+          },
+          {
+            "title": "Comandos Avanzados",
+            "content": [
+              "```git rebase -i HEAD~3 # Rebase interactivo```",
+              "```git reflog # Historial de referencias```",
+              "```git bisect start # Iniciar búsqueda binaria```",
+              "```git worktree add ../carpeta rama # Crear worktree```",
+              "```git filter-branch # Reescribir historial```"
+            ]
+          },
+          {
+            "title": "Alias Útiles",
+            "content": [
+              "```git config --global alias.co checkout # Alias para checkout```",
+              "```git config --global alias.br branch # Alias para branch```",
+              "```git config --global alias.st status # Alias para status```",
+              "```git config --global alias.unstage 'reset HEAD --' # Remover del staging```"
+            ]
+          },
+          {
+            "title": ".gitignore Recomendado",
+            "content": [
+              "```# Dependencies\nnode_modules/\nvendor/\n\n# Environment\n.env\n.env.local\n\n# IDE\n.vscode/\n.idea/\n\n# System\n.DS_Store\nThumbs.db\n\n# Build\ndist/\nbuild/\n*.log```"
+            ]
+          },
+          {
+            "title": "Buenas Prácticas",
+            "content": [
+              "**Commits atómicos**: Cada commit debe representar un cambio lógico único",
+              "**Mensajes descriptivos**: Usar mensajes claros que expliquen el *por qué* del cambio",
+              "***Actualizaciones frecuentes***: Hacer commits pequeños y frecuentes",
+              "**Ramas funcionales**: Crear ramas para nuevas características o correcciones",
+              "**Rebase vs Merge**: *Rebase* para mantener historial limpio, *merge* para colaboración"
+            ]
+          },
+          {
+            "title": "Resolución de Problemas",
+            "content": [
+              "```git reset --hard HEAD~1 # Deshacer último commit```",
+              "```git clean -fd # Eliminar archivos no rastreados```",
+              "```git revert HEAD # Revertir último commit```",
+              "```git stash # Guardar cambios temporalmente```",
+              "```git fsck # Verificar integridad del repositorio```"
+            ]
+          }
+        ]
+      }
+    ]
+  }
